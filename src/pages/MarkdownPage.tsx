@@ -10,8 +10,6 @@ import remarkEmoji from "remark-emoji";
 import remarkToc from "remark-toc";
 import remarkBreaks from "remark-breaks";
 
-import sample3 from "/md/test/sample3.mdx";
-
 const MarkdownPage = () => {
     const { filepath } = useParams<{ filepath: string }>();
     const [markdownContent, setMarkdownContent] = useState<string>("");
@@ -72,7 +70,7 @@ const MarkdownPage = () => {
                 </Heading>
                 <Text fontWeight={"bold"}>{markdownContent}</Text>
                 <Markdown
-                    children={markdownContent}
+                    // children={markdownContent}
                     rehypePlugins={[rehypeKatex]}
                     remarkPlugins={[
                         remarkGfm,
@@ -81,9 +79,9 @@ const MarkdownPage = () => {
                         remarkToc,
                         remarkBreaks,
                     ]}
-                ></Markdown>
-
-                {/* <sample3 /> */}
+                >
+                    {markdownContent}
+                </Markdown>
             </Box>
         </>
     );
