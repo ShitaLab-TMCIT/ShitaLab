@@ -10,6 +10,8 @@ import remarkEmoji from "remark-emoji";
 import remarkToc from "remark-toc";
 import remarkBreaks from "remark-breaks";
 
+import sample3 from "/md/test/sample3.mdx";
+
 const MarkdownPage = () => {
     const { filepath } = useParams<{ filepath: string }>();
     const [markdownContent, setMarkdownContent] = useState<string>("");
@@ -20,10 +22,10 @@ const MarkdownPage = () => {
 
             const convertedPath = filepath.replace(/-/g, "/");
 
-            const fetchPath =
-                import.meta.env.VITE_REPO_NAME +
-                "/md/" +
-                `${convertedPath}.txt`;
+            const fetchPath = `${
+                import.meta.env.BASE_URL
+            }/md/${convertedPath}.md`;
+
             try {
                 const response = await fetch(fetchPath);
                 console.log(fetchPath);
@@ -31,8 +33,9 @@ const MarkdownPage = () => {
 
                 if (
                     response.ok &&
-                    contentType &&
-                    contentType.includes("text/plain")
+                    contentType
+                    // &&
+                    // contentType.includes("text/plain")
                 ) {
                     const text = await response.text();
                     console.log(text);
@@ -79,6 +82,8 @@ const MarkdownPage = () => {
                         remarkBreaks,
                     ]}
                 ></Markdown>
+
+                {/* <sample3 /> */}
             </Box>
         </>
     );
