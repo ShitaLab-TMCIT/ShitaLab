@@ -6,4 +6,4 @@
 
 ![test](./assets/test.png)
 
-![test2](/public/assets/test2.png)
+![test2](/ShitaLab/public/assets/test2.png)
