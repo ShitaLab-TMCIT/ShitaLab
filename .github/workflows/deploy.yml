@@ -5,8 +5,7 @@ on:
         branches: [main]
 
 permissions:
-    contents: write # 必要な権限を付与
-
+    contents: write
 jobs:
     deploy:
         runs-on: ubuntu-latest
@@ -50,7 +49,7 @@ jobs:
 
             # デプロイ
             - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3 # 正しいアクションを使用
+              uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./dist
