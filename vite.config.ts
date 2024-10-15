@@ -23,7 +23,7 @@ const options = {
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react(), { enforce: "pre", ...mdx(options) }],
-    base: "/ShitaLab",
+    base: "/ShitaLab/",
     build: {
         outDir: "./docs",
     },
