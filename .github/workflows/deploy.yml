@@ -15,12 +15,12 @@ jobs:
                   node-version: "20"
 
             - name: Cache Node.js modules
-              uses: action/cache@v3
+              uses: actions/cache@v3
               with:
                   path: ~/.npm
-                  key: ${{runner.os}}-node-${{hashFiles('package-lock.json')}}
+                  key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
                   restore-keys: |
-                      ${{runner.os}}-node-
+                      ${{ runner.os }}-node-
 
             - name: Set up Python
               uses: actions/setup-python@v4
@@ -36,10 +36,10 @@ jobs:
             - name: Build
               run: npm run build
               env:
-                  VITE_GITHUB_TOKEN: ${{secrets.VITE_GITHUB_TOKEN}}
+                  VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
 
             - name: Deploy
-              uses: peaceiris/actions-gh-page@v3
+              uses: peaceiris/actions-gh-pages@v3
               with:
-                  github_token: ${{secrets.GITHUB_TOKEN}}
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./dist
