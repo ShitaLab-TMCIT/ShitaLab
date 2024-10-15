@@ -48,7 +48,9 @@ const Header = () => {
                     as={Link}
                     fontSize={"xl"}
                     to={"/wiki"}
-                    color={pathname === "/wiki" ? "blue.600" : undefined}
+                    color={
+                        pathname.startsWith("/wiki") ? "blue.600" : undefined
+                    }
                     sx={{
                         transition: "all 0.3s ease",
                         _hover: {
