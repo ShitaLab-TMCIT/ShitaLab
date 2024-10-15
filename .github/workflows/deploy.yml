@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to main/docs
 
 on:
     push:
@@ -8,15 +8,20 @@ permissions:
     contents: write
 
 jobs:
-    deploy:
+    build:
         runs-on: ubuntu-latest
         steps:
+            # コードのチェックアウト
             - uses: actions/checkout@v3
+              with:
+                  persist-credentials: false # 新しい認証情報を使用するため
 
+            # Node.jsのセットアップ
             - uses: actions/setup-node@v3
               with:
                   node-version: "20"
 
+            # Node.jsモジュールのキャッシュ
             - name: Cache Node.js modules
               uses: actions/cache@v3
               with:
@@ -25,29 +30,38 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-node-
 
+            # Pythonのセットアップ
             - name: Set up Python
               uses: actions/setup-python@v4
               with:
                   python-version: "3.10"
 
+            # Pythonスクリプトの実行
             - name: Run Python script
               run: |
                   python path_to_json.py
 
+            # Node.js依存関係のインストール
             - run: npm ci
 
+            # ビルドの実行
             - name: Build
               run: npm run build
               env:
                   VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
-                  VITE_REPO_NAME: ${{ secrets.VITE_REPO_NAME }}
 
-            - name: List docs directory contents
-              run: ls -la ./docs
+            # 変更されたファイルをステージング
+            - name: Commit changes
+              run: |
+                  git config --global user.name 'github-actions[bot]'
+                  git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+                  git add docs
+                  git commit -m 'Deploy to GitHub Pages' || echo "No changes to commit"
+              # 変更がない場合のエラーを無視
 
-            - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
+            # 変更をプッシュ
+            - name: Push changes
+              uses: ad-m/github-push-action@v0.6.0
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./docs # ビルド出力ディレクトリを指定
-                  destination_dir: docs # gh-pagesブランチ内のdocsディレクトリにデプロイ
+                  branch: main
