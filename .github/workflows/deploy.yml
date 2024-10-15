@@ -1,22 +1,25 @@
-name: Deploy to GitHub
+name: Deploy to GitHub Pages
 
 on:
     push:
         branches: [main]
 
 permissions:
-    contents: write
+    contents: write # 必要な権限を付与
 
 jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
+            # コードのチェックアウト
             - uses: actions/checkout@v3
 
+            # Node.jsのセットアップ
             - uses: actions/setup-node@v3
               with:
                   node-version: "20"
 
+            # Node.jsモジュールのキャッシュ
             - name: Cache Node.js modules
               uses: actions/cache@v3
               with:
@@ -25,24 +28,29 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-node-
 
+            # Pythonのセットアップ
             - name: Set up Python
               uses: actions/setup-python@v4
               with:
                   python-version: "3.10"
 
+            # Pythonスクリプトの実行
             - name: Run Python script
               run: |
                   python path_to_json.py
 
+            # Node.js依存関係のインストール
             - run: npm ci
 
+            # ビルドの実行
             - name: Build
               run: npm run build
               env:
                   VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
 
+            # デプロイ
             - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
+              uses: peaceiris/actions-gh-pages@v3 # 正しいアクションを使用
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./dist
