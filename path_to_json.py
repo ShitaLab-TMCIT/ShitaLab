@@ -17,9 +17,13 @@ def dir_to_dict(path):
     with os.scandir(path) as it:
         for entry in it:
             if entry.is_dir():
-                dirs.append(entry)
+                # ディレクトリ名が 'assets' の場合はスキップ
+                if entry.name != 'assets':
+                    dirs.append(entry)
             else:
-                files.append(entry) 
+                # ファイルの拡張子が .md の場合のみリストに追加
+                if entry.name.endswith('.md'):
+                    files.append(entry) 
 
     for directory in sorted(dirs, key=lambda e: os.path.getmtime(e.path), reverse=True):
         dir_dict[directory.name] = dir_to_dict(directory.path)
