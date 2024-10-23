@@ -23,30 +23,19 @@ interface RepoData {
     owner: OwnerData;
 }
 
-const GitHubRepoInfo: React.FC<{ owner: string; repo: string }> = ({
-    owner,
-    repo,
-}) => {
-    const [repoData, setRepoData] = useState<RepoData | null>(null);
+const GitHubRepos: React.FC = () => {
+    const [repos, setRepos] = useState<RepoData[] | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchRepoData = async () => {
             setLoading(true);
             try {
-                const token = import.meta.env.VITE_GITHUB_TOKEN;
                 const response = await fetch(
-                    `https://api.github.com/repos/${owner}/${repo}`,
-                    {
-                        headers: {
-                            Authorization: `token ${token}`,
-                        },
-                    }
+                    import.meta.env.BASE_URL + "/GitHubInfos.json"
                 );
                 const data = await response.json();
-                if (data && data.owner) {
-                    setRepoData(data);
-                }
+                setRepos(data);
             } catch (error) {
                 console.error("Error fetching repo data:", error);
             } finally {
@@ -55,49 +44,56 @@ const GitHubRepoInfo: React.FC<{ owner: string; repo: string }> = ({
         };
 
         fetchRepoData();
-    }, [owner, repo]);
+    }, []);
 
     if (loading) {
         return <Spinner />;
     }
 
-    if (!repoData) {
-        return <Text>Error loading repository data.</Text>;
+    if (!repos || repos.length === 0) {
+        return <Text>No repository data available.</Text>;
     }
 
     return (
-        <Box
-            borderWidth="1px"
-            borderRadius="lg"
-            borderColor={"gray.600"}
-            p={4}
-            w={{ base: "80%", md: "500px" }}
-            mt={"30px"}
-        >
-            <Flex alignItems="center" mb={4}>
-                <Avatar src={repoData.owner.avatar_url} size="md" mr={4} />
-                <Box>
-                    <Link href={repoData.html_url} isExternal>
-                        <Text fontSize="xl" fontWeight="bold">
-                            {repoData.name}
-                        </Text>
-                    </Link>
-                    <Text fontSize="sm" color="gray.500">
-                        @{repoData.owner.login}
+        <Box>
+            {repos.map((repo) => (
+                <Box
+                    key={repo.name}
+                    borderWidth="1px"
+                    borderRadius="lg"
+                    borderColor={"gray.600"}
+                    p={4}
+                    w={{ base: "80%", md: "500px" }}
+                    mt={"30px"}
+                >
+                    <Flex alignItems="center" mb={4}>
+                        <Avatar src={repo.owner.avatar_url} size="md" mr={4} />
+                        <Box>
+                            <Link href={repo.html_url} isExternal>
+                                <Text fontSize="xl" fontWeight="bold">
+                                    {repo.name}
+                                </Text>
+                            </Link>
+                            <Text fontSize="sm" color="gray.500">
+                                @{repo.owner.login}
+                            </Text>
+                        </Box>
+                    </Flex>
+                    <Text mt={2} ml={4}>
+                        {repo.description}
                     </Text>
+                    <Flex mt={4}>
+                        <Badge mr={2} colorScheme="yellow">
+                            ★ {repo.stargazers_count}
+                        </Badge>
+                        <Badge colorScheme="green">
+                            Forks: {repo.forks_count}
+                        </Badge>
+                    </Flex>
                 </Box>
-            </Flex>
-            <Text mt={2} ml={4}>
-                {repoData.description}
-            </Text>
-            <Flex mt={4}>
-                <Badge mr={2} colorScheme="yellow">
-                    ★ {repoData.stargazers_count}
-                </Badge>
-                <Badge colorScheme="green">Forks: {repoData.forks_count}</Badge>
-            </Flex>
+            ))}
         </Box>
     );
 };
 
-export default GitHubRepoInfo;
+export default GitHubRepos;
