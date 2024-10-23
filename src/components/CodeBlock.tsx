@@ -1,7 +1,7 @@
 import { Box, Code, IconButton, useClipboard } from "@chakra-ui/react";
 import { CopyIcon, CheckIcon } from "@chakra-ui/icons";
 import React, { useState } from "react";
-import Editor from "@monaco-editor/react";
+// import Editor from "@monaco-editor/react";
 
 export interface CodeBlockProps {
     className?: string;
@@ -14,24 +14,22 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
         if (typeof children === "string") {
             return children;
         } else if (typeof children === "number") {
-            return children.toString(); // 数字を文字列に変換
+            return children.toString();
         } else if (React.isValidElement(children)) {
-            return ""; // React要素は無視
+            return "";
         } else if (Array.isArray(children)) {
-            // 複数の子要素の場合、それぞれを文字列に変換して結合
             return children.map(extractTextFromChildren).join("");
         } else if (children instanceof Object) {
-            return ""; // その他のオブジェクトは無視
+            return "";
         }
-        return ""; // null, undefined, その他の場合は空文字列を返す
+        return "";
     };
 
-    // 子要素から文字列を抽出
     const code = extractTextFromChildren(children).trim();
     // const code = String(children).trim();
     const { onCopy } = useClipboard(code);
 
-    const language = className?.replace("language-", "") || "python";
+    // const language = className?.replace("language-", "") || "python";
 
     const handleCopy = () => {
         onCopy();
