@@ -1,4 +1,4 @@
-name: Build and Deploy to main/docs
+name: Build and Deploy to gh-pages/docs
 
 on:
     push:
@@ -49,7 +49,6 @@ jobs:
               run: npm run build
               env:
                   VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
-                  # VITE_REPO_NAME: ${{ secrets.VITE_REPO_NAME }}
 
             # 変更されたファイルをステージング
             - name: Commit changes
@@ -60,9 +59,9 @@ jobs:
                   git commit -m 'Deploy to GitHub Pages' || echo "No changes to commit"
               # 変更がない場合のエラーを無視
 
-            # 変更をプッシュ
+            # 変更をgh-pagesブランチにプッシュ
             - name: Push changes
               uses: ad-m/github-push-action@v0.6.0
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  branch: main
+                  branch: gh-pages # gh-pagesブランチに変更をプッシュ
