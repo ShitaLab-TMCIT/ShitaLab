@@ -17,12 +17,7 @@ const Home = () => {
                     設楽研究室HPです
                 </Text>
 
-                <GitHubRepoInfo
-                    owner="hamuchan214"
-                    repo="IEEE802.11simulator"
-                />
-
-                <GitHubRepoInfo owner="ryoww" repo="shitalab_homepage" />
+                <GitHubRepoInfo />
             </VStack>
         </>
     );
