@@ -49,7 +49,7 @@ jobs:
               run: npm run build
               env:
                   VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
-                  VITE_REPO_NAME: ${{ secrets.VITE_REPO_NAME }}
+                  # VITE_REPO_NAME: ${{ secrets.VITE_REPO_NAME }}
 
             # 変更されたファイルをステージング
             - name: Commit changes
