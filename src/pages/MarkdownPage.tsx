@@ -28,11 +28,15 @@ const MarkdownPage = () => {
     const { filepath } = useParams<{ filepath: string }>();
     const [markdownContent, setMarkdownContent] = useState<string>("");
 
+    const convertedPath = filepath ? filepath.replace(/-/g, "/") : "";
+    const directoryPath = convertedPath.substring(
+        0,
+        convertedPath.lastIndexOf("/")
+    );
+
     useEffect(() => {
         const loadMarkdown = async () => {
             if (!filepath) return;
-
-            const convertedPath = filepath.replace(/-/g, "/");
 
             const fetchPath = `/${
                 import.meta.env.VITE_REPO_NAME
@@ -40,12 +44,12 @@ const MarkdownPage = () => {
 
             try {
                 const response = await fetch(fetchPath);
-                console.log(fetchPath);
+                // console.log(fetchPath);
                 const contentType = response.headers.get("Content-Type");
 
                 if (response.ok && contentType) {
                     const text = await response.text();
-                    console.log(text); // test
+                    // console.log(text);
                     setMarkdownContent(text);
                 } else {
                     setMarkdownContent(
@@ -59,27 +63,10 @@ const MarkdownPage = () => {
         };
 
         loadMarkdown();
-    }, [filepath]);
+    }, [filepath, convertedPath]);
 
     return (
         <>
-            {/* <HStack mt={"20px"} as={Link} to={"/wiki"}>
-                <IconButton
-                    aria-label="Back to pre-page"
-                    icon={<IoIosArrowBack />}
-                />
-                <Text>戻る</Text>
-            </HStack>
-            <Box
-                mt={"20px"}
-                bg={"gray"}
-                fontSize={"3xl"}
-                as={Link}
-                to={"/wiki"}
-            >
-                <Text ml={"30px"}>戻る</Text>
-            </Box> */}
-
             <Box w={{ base: "90%", md: "80%", lg: "60%" }} mx="auto" my={10}>
                 <Heading as="h1" mb={6}>
                     {filepath}
@@ -116,9 +103,11 @@ const MarkdownPage = () => {
                             if (!src) {
                                 return null;
                             }
-                            const adjustedSrc = `/${import.meta.env.BASE_URL}${
-                                src.startsWith("/") ? src.slice(1) : src
-                            }`;
+                            const adjustedSrc = `${
+                                import.meta.env.BASE_URL
+                            }/md/${directoryPath}/${src}`;
+                            // console.log(adjustedSrc);
+
                             return (
                                 <Image src={adjustedSrc} alt={alt} {...props} />
                             );
