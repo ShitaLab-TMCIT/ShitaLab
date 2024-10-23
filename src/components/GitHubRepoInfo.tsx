@@ -31,7 +31,9 @@ const GitHubRepos: React.FC = () => {
         const fetchRepoData = async () => {
             setLoading(true);
             try {
-                const response = await fetch("/GitHubInfos.json");
+                const response = await fetch(
+                    import.meta.env.BASE_URL + "/GitHubInfos.json"
+                );
                 const data = await response.json();
                 setRepos(data);
             } catch (error) {

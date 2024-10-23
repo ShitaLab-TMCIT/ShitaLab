@@ -6,14 +6,10 @@ import {
     UnorderedList,
     Link as ChakraLink,
     ListItem,
-    HStack,
-    IconButton,
     Image,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-
-import { IoIosArrowBack } from "react-icons/io";
+import { useParams } from "react-router-dom";
 
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
@@ -67,7 +63,7 @@ const MarkdownPage = () => {
 
     return (
         <>
-            <HStack mt={"20px"} as={Link} to={"/wiki"}>
+            {/* <HStack mt={"20px"} as={Link} to={"/wiki"}>
                 <IconButton
                     aria-label="Back to pre-page"
                     icon={<IoIosArrowBack />}
@@ -82,7 +78,7 @@ const MarkdownPage = () => {
                 to={"/wiki"}
             >
                 <Text ml={"30px"}>戻る</Text>
-            </Box>
+            </Box> */}
 
             <Box w={{ base: "90%", md: "80%", lg: "60%" }} mx="auto" my={10}>
                 <Heading as="h1" mb={6}>

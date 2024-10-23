@@ -11,7 +11,7 @@ if os.path.exists(env_path):
     load_dotenv(env_path)
     print("Loaded .env")
 else:
-    print(".envファイルが見つかりません。GitHub Secretsから環境変数を読み込みます")
+    print("Not found .env, load GitHub Secrets")
 
 # GitHubトークンを環境変数から取得
 token = os.environ.get("VITE_GITHUB_TOKEN")
