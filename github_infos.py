@@ -16,6 +16,8 @@ else:
 # GitHubトークンを環境変数から取得
 token = os.environ.get("VITE_GITHUB_TOKEN")
 
+print(token)
+
 if token is None:
     raise ValueError("GitHubトークンが設定されていません。")
 
