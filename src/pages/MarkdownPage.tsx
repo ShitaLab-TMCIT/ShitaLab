@@ -120,9 +120,9 @@ const MarkdownPage = () => {
                             if (!src) {
                                 return null;
                             }
-                            const adjustedSrc = `/${
-                                import.meta.env.VITE_REPO_NAME
-                            }${src.startsWith("/") ? src.slice(1) : src}`;
+                            const adjustedSrc = `/${import.meta.env.BASE_URL}${
+                                src.startsWith("/") ? src.slice(1) : src
+                            }`;
                             return (
                                 <Image src={adjustedSrc} alt={alt} {...props} />
                             );

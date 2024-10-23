@@ -10,7 +10,7 @@ import theme from "./theme.tsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <BrowserRouter basename={import.meta.env.VITE_REPO_NAME}>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <ChakraProvider theme={theme}>
                 <ColorModeScript
                     initialColorMode={theme.config.initialColorMode}
