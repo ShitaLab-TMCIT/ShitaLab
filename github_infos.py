@@ -6,15 +6,16 @@ from dotenv import load_dotenv
 # .envファイルのパス
 env_path = "./.env"
 
-# .envファイルが存在すれば読み込む
 if os.path.exists(env_path):
+    # .envファイルが存在す れば読み込む
     load_dotenv(env_path)
     print("Loaded .env")
+    token = os.environ.get("VITE_GITHUB_TOKEN")
 else:
+    # GitHubトークンを環境変数から取得
     print("Not found .env, load GitHub Secrets")
+    token = os.getenv("VITE_GITHUB_TOKEN")
 
-# GitHubトークンを環境変数から取得
-token = os.environ.get("VITE_GITHUB_TOKEN")
 
 print(token)
 
