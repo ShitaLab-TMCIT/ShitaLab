@@ -47,11 +47,9 @@ jobs:
                   python path_to_json.py
 
 
-            - name: Run Python script 2
-              run: |
-                  python github_infos.py
-              env:
-                  VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
+            # - name: Run Python script 2
+            #   run: |
+            #       python github_infos.py
 
             # Node.js依存関係のインストール
             - run: npm ci

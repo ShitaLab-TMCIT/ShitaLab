@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 env_path = "./.env"
 
 if os.path.exists(env_path):
-    # .envファイルが存在す れば読み込む
+    # .envファイルが存在すれば読み込む
     load_dotenv(env_path)
     print("Loaded .env")
     token = os.environ.get("VITE_GITHUB_TOKEN")
