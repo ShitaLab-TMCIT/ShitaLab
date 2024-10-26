@@ -38,7 +38,7 @@ const MarkdownPage = () => {
         const loadMarkdown = async () => {
             if (!filepath) return;
 
-            const fetchPath = `/${import.meta.env.VITE_REPO_NAME
+            const fetchPath = `/${import.meta.env.BASE_URL
                 }/md/${convertedPath}.md`;
 
             try {
