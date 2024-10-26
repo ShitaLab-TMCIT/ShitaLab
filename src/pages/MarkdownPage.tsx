@@ -39,7 +39,7 @@ const MarkdownPage = () => {
             if (!filepath) return;
 
             const fetchPath = `/${import.meta.env.BASE_URL
-                }/md/${convertedPath}.md`;
+                }md/${convertedPath}.md`;
 
             try {
                 const response = await fetch(fetchPath);
