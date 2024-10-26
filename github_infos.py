@@ -17,7 +17,8 @@ else:
     token = os.getenv("VITE_GITHUB_TOKEN")
 
 
-print(token)
+print(f"Token: {token[:4]}...")  # トークンの一部のみを表示
+
 
 if token is None:
     raise ValueError("GitHubトークンが設定されていません。")
