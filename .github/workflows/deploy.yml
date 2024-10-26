@@ -50,6 +50,8 @@ jobs:
             - name: Run Python script 2
               run: |
                   python github_infos.py
+              env:
+                  VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
 
             # Node.js依存関係のインストール
             - run: npm ci
