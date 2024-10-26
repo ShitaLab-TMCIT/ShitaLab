@@ -38,17 +38,17 @@ const MarkdownPage = () => {
         const loadMarkdown = async () => {
             if (!filepath) return;
 
-            const fetchPath = `/${import.meta.env.BASE_URL
+            const fetchPath = `${import.meta.env.BASE_URL
                 }md/${convertedPath}.md`;
 
             try {
                 const response = await fetch(fetchPath);
-                // console.log(fetchPath);
+                console.log(fetchPath);
                 const contentType = response.headers.get("Content-Type");
 
                 if (response.ok && contentType) {
                     const text = await response.text();
-                    // console.log(text);
+                    console.log(text);
                     setMarkdownContent(text);
                 } else {
                     setMarkdownContent(
