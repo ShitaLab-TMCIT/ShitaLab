@@ -38,9 +38,8 @@ const MarkdownPage = () => {
         const loadMarkdown = async () => {
             if (!filepath) return;
 
-            const fetchPath = `/${
-                import.meta.env.VITE_REPO_NAME
-            }/md/${convertedPath}.md`;
+            const fetchPath = `/${import.meta.env.VITE_REPO_NAME
+                }/md/${convertedPath}.md`;
 
             try {
                 const response = await fetch(fetchPath);
@@ -103,10 +102,9 @@ const MarkdownPage = () => {
                             if (!src) {
                                 return null;
                             }
-                            const adjustedSrc = `${
-                                import.meta.env.BASE_URL
-                            }/md/${directoryPath}/${src}`;
-                            // console.log(adjustedSrc);
+                            const adjustedSrc = `${import.meta.env.BASE_URL
+                                }/md/${directoryPath}/${src}`;
+                            console.log(adjustedSrc);
 
                             return (
                                 <Image src={adjustedSrc} alt={alt} {...props} />

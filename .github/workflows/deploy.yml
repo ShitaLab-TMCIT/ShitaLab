@@ -46,10 +46,6 @@ jobs:
               run: |
                   python path_to_json.py
 
-            # 環境変数ファイル (.env) の作成
-            - name: Create .env file
-              run: |
-                  echo "VITE_GITHUB_TOKEN=${{ secrets.VITE_GITHUB_TOKEN }}" > .env
 
             - name: Run Python script 2
               run: |
