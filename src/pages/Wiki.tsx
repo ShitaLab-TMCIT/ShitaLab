@@ -48,7 +48,7 @@ const RenderDataAccordion = ({
                                     to={`/wiki/${currentPath}`}
                                 >
                                     <Text fontWeight="bold" fontSize={"lg"}>
-                                        {key}
+                                        {key}, {currentPath}
                                     </Text>
                                     <Text color="gray.500">
                                         {data[key] as string}
