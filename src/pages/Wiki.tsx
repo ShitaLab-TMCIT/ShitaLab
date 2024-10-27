@@ -48,7 +48,7 @@ const RenderDataAccordion = ({
                                     to={`/wiki/${currentPath}`}
                                 >
                                     <Text fontWeight="bold" fontSize={"lg"}>
-                                        {key}, {currentPath}
+                                        {key}
                                     </Text>
                                     <Text color="gray.500">
                                         {data[key] as string}
@@ -63,7 +63,6 @@ const RenderDataAccordion = ({
                                                 fontSize={"2xl"}
                                             >
                                                 {key}
-                                                {marginRight}
                                             </Box>
 
                                             <Spacer />
