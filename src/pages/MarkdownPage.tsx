@@ -38,8 +38,9 @@ const MarkdownPage = () => {
         const loadMarkdown = async () => {
             if (!filepath) return;
 
-            const fetchPath = `${import.meta.env.BASE_URL
-                }md/${convertedPath}.md`;
+            const fetchPath = `${
+                import.meta.env.BASE_URL
+            }md/${convertedPath}.md`;
 
             try {
                 const response = await fetch(fetchPath);
@@ -102,12 +103,19 @@ const MarkdownPage = () => {
                             if (!src) {
                                 return null;
                             }
-                            const adjustedSrc = `${import.meta.env.BASE_URL
-                                }/md/${directoryPath}/${src}`;
+                            const adjustedSrc = `${
+                                import.meta.env.BASE_URL
+                            }/md/${directoryPath}/${src}`;
                             console.log(adjustedSrc);
 
                             return (
-                                <Image src={adjustedSrc} alt={alt} {...props} />
+                                <Image
+                                    mx={"auto"}
+                                    src={adjustedSrc}
+                                    alt={alt}
+                                    {...props}
+                                    maxWidth={"80%"}
+                                />
                             );
                         },
                         code: ({ node, className, children, ...props }) => {
