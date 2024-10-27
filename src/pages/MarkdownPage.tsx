@@ -111,6 +111,7 @@ const MarkdownPage = () => {
                             return (
                                 <Image
                                     mx={"auto"}
+                                    my={"15px"}
                                     src={adjustedSrc}
                                     alt={alt}
                                     {...props}
