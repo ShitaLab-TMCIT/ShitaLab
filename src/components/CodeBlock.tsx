@@ -63,7 +63,12 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
             /> */}
 
             {/* Codeコンポーネントの内容 */}
-            <Code w={"100%"} whiteSpace={"pre-wrap"} className={className}>
+            <Code
+                mx={"auto"}
+                w={"80%"}
+                whiteSpace={"pre-wrap"}
+                className={className}
+            >
                 {children}
             </Code>
         </Box>
