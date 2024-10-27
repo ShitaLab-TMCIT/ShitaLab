@@ -55,7 +55,7 @@ const GitHubRepos: React.FC = () => {
     }
 
     return (
-        <Box mx={"auto"}>
+        <Box w={"100%"}>
             {repos.map((repo) => (
                 <Box
                     key={repo.name}
@@ -65,6 +65,7 @@ const GitHubRepos: React.FC = () => {
                     p={4}
                     w={{ base: "80%", md: "500px" }}
                     mt={"30px"}
+                    mx={"auto"}
                 >
                     <Flex alignItems="center" mb={4}>
                         <Avatar src={repo.owner.avatar_url} size="md" mr={4} />
