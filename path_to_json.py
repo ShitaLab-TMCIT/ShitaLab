@@ -46,4 +46,6 @@ if __name__ == "__main__":
     
     save_structure_to_json(directory_structure, output_json_file)
     
+    print(directory_structure)
+    
     print(f"saved '{output_json_file}'")
