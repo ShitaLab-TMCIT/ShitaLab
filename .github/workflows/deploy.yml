@@ -1,4 +1,4 @@
-name: Build and Deploy to gh-pages/docs
+name: Build and Deploy to gh-pages
 
 on:
     push:
@@ -6,6 +6,8 @@ on:
 
 permissions:
     contents: write
+    pages: write # 必須: Pagesに書き込み権限を与える
+    id-token: write # GitHub OIDCトークンにアクセスするために必要
 
 jobs:
     build:
@@ -13,8 +15,6 @@ jobs:
         steps:
             # コードのチェックアウト
             - uses: actions/checkout@v3
-              with:
-                  persist-credentials: false # 新しい認証情報を使用するため
 
             # Node.jsのセットアップ
             - uses: actions/setup-node@v3
@@ -46,34 +46,13 @@ jobs:
               run: |
                   python path_to_json.py
 
-
-            # - name: Run Python script 2
-            #   run: |
-            #       python github_infos.py
-
             # Node.js依存関係のインストール
             - run: npm ci
 
             # ビルドの実行
             - name: Build
               run: npm run build
-              env:
-                  VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
 
-            # 変更されたファイルをステージング
-            - name: Commit changes
-              run: |
-                  git config --global user.name 'github-actions[bot]'
-                  git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-                  git add docs
-                  git commit -m 'Deploy to GitHub Pages' || echo "No changes to commit"
-              # 変更がない場合のエラーを無視
-
-            # 変更をgh-pagesブランチにプッシュ
-            - name: Push changes
-              uses: ad-m/github-push-action@v0.6.0
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  branch: gh-pages
-                  force: true # 強制的にプッシュ
-
+            # GitHub Pagesへのデプロイ
+            - name: Deploy to GitHub Pages
+              uses: actions/deploy-pages@v1
