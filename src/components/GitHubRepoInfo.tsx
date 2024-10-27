@@ -55,7 +55,7 @@ const GitHubRepos: React.FC = () => {
     }
 
     return (
-        <Box>
+        <Box mx={"auto"}>
             {repos.map((repo) => (
                 <Box
                     key={repo.name}
