@@ -56,3 +56,6 @@ jobs:
             # GitHub Pagesへのデプロイ
             - name: Deploy to GitHub Pages
               uses: actions/deploy-pages@v1
+              with:
+                  name: build-artifact
+                  path: docs
