@@ -25,6 +25,6 @@ export default defineConfig({
     plugins: [react(), { enforce: "pre", ...mdx(options) }],
     base: "/ShitaLab/",
     build: {
-        outDir: "./docs",
+        outDir: "./dist",
     },
 });
