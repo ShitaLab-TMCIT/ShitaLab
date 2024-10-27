@@ -38,7 +38,13 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
     };
 
     return (
-        <Box position={"relative"} w={"100%"} p={2} my={4}>
+        <Box
+            position={"relative"}
+            w={{ base: "100%", md: "80%" }}
+            mx={"auto"}
+            my={5}
+            gap={0}
+        >
             {/* コピーボタンを右上に配置 */}
             <IconButton
                 aria-label={"Copy code"}
@@ -46,10 +52,9 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
                 size={"sm"}
                 onClick={handleCopy}
                 position={"absolute"}
-                top={2}
-                right={2}
+                right={0}
                 zIndex={1}
-                mr={"10%"}
+                mr={{ base: 0 }}
             />
 
             {/* <Editor
@@ -65,8 +70,7 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
 
             {/* Codeコンポーネントの内容 */}
             <Code
-                mx={"auto"}
-                w={"80%"}
+                w={{ base: "100%" }}
                 whiteSpace={"pre-wrap"}
                 className={className}
             >

@@ -44,12 +44,12 @@ const MarkdownPage = () => {
 
             try {
                 const response = await fetch(fetchPath);
-                console.log(fetchPath);
+                // console.log(fetchPath);
                 const contentType = response.headers.get("Content-Type");
 
                 if (response.ok && contentType) {
                     const text = await response.text();
-                    console.log(text);
+                    // console.log(text);
                     setMarkdownContent(text);
                 } else {
                     setMarkdownContent(
@@ -83,13 +83,31 @@ const MarkdownPage = () => {
                     rehypePlugins={[rehypeHighlight, rehypeKatex]}
                     components={{
                         h1: ({ node, ...props }) => (
-                            <Heading as="h1" size="xl" my={4} {...props} />
+                            <Heading
+                                as="h1"
+                                size="xl"
+                                mt={8}
+                                mb={3}
+                                {...props}
+                            />
                         ),
                         h2: ({ node, ...props }) => (
-                            <Heading as="h2" size="lg" my={4} {...props} />
+                            <Heading
+                                as="h2"
+                                size="lg"
+                                mt={8}
+                                mb={3}
+                                {...props}
+                            />
                         ),
                         h3: ({ node, ...props }) => (
-                            <Heading as="h3" size="md" my={4} {...props} />
+                            <Heading
+                                as="h3"
+                                size="md"
+                                mt={8}
+                                mb={3}
+                                {...props}
+                            />
                         ),
                         p: ({ node, ...props }) => <Text my={2} {...props} />,
                         a: ({ node, ...props }) => (
@@ -106,7 +124,7 @@ const MarkdownPage = () => {
                             const adjustedSrc = `${
                                 import.meta.env.BASE_URL
                             }/md/${directoryPath}/${src}`;
-                            console.log(adjustedSrc);
+                            // console.log(adjustedSrc);
 
                             return (
                                 <Image
