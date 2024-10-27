@@ -49,6 +49,7 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
                 top={2}
                 right={2}
                 zIndex={1}
+                mr={"10%"}
             />
 
             {/* <Editor
