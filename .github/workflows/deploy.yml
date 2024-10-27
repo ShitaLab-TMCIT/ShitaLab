@@ -53,8 +53,6 @@ jobs:
             # ビルドの実行 (docsフォルダにビルド)
             - name: Build
               run: npm run build
-              env:
-                  VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
 
             # GitHub Pagesの設定
             - name: Setup Pages
