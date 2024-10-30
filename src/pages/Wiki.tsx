@@ -96,12 +96,13 @@ const Wiki = () => {
             .then((response) => response.json())
             .then((data) => setData(data));
     }, []);
+    document;
 
     return (
         <>
             <VStack w={"100%"}>
-                <Heading as="h1" mb={6}>
-                    JSON Data
+                <Heading as="h1" my={6}>
+                    Document
                 </Heading>
 
                 <RenderDataAccordion data={data} parentKey="" />

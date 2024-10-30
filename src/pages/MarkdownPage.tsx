@@ -23,15 +23,21 @@ import remarkBreaks from "remark-breaks";
 import "katex/dist/katex.min.css";
 import "highlight.js/styles/github-dark-dimmed.css";
 import CodeBlock from "../components/CodeBlock";
+import MetaDataBox from "../components/MetaDataBox";
 
 const MarkdownPage = () => {
     const { filepath } = useParams<{ filepath: string }>();
     const [markdownContent, setMarkdownContent] = useState<string>("");
 
     const convertedPath = filepath ? filepath.replace(/-/g, "/") : "";
+
     const directoryPath = convertedPath.substring(
         0,
         convertedPath.lastIndexOf("/")
+    );
+
+    const fileName = convertedPath.substring(
+        convertedPath.lastIndexOf("/") + 1
     );
 
     useEffect(() => {
@@ -69,7 +75,7 @@ const MarkdownPage = () => {
         <>
             <Box w={{ base: "90%", md: "80%", lg: "60%" }} mx="auto" my={10}>
                 <Heading as="h1" mb={6}>
-                    {filepath}
+                    {fileName}
                 </Heading>
 
                 <ReactMarkdown
@@ -110,9 +116,19 @@ const MarkdownPage = () => {
                             />
                         ),
                         p: ({ node, ...props }) => <Text my={2} {...props} />,
-                        a: ({ node, ...props }) => (
-                            <ChakraLink color="teal.500" {...props} />
-                        ),
+                        a: ({ node, href, ...props }) => {
+                            return (
+                                <>
+                                    <ChakraLink
+                                        color="teal.500"
+                                        {...props}
+                                        href={href}
+                                        isExternal
+                                    />
+                                    {href && <MetaDataBox url={href} />}
+                                </>
+                            );
+                        },
                         li: ({ node, ...props }) => <ListItem {...props} />,
                         ul: ({ node, ...props }) => (
                             <UnorderedList my={2} {...props} />
