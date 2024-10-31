@@ -5,7 +5,3 @@
 以下にアクセス x64 マシン用 WSL2 Linux カーネル更新プログラムパッケージをクリックしてダウンロード
 
 [x64 マシン用 WSL2 Linux カーネル更新プログラムパッケージ](https://learn.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
-[x64 マシン用 WSL2 Linux カーネル更新プログラムパッケージ](https://learn.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
-[x64 マシン用 WSL2 Linux カーネル更新プログラムパッケージ](https://learn.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)
-
-[test](https://zenn.dev/shimat/articles/c15005cee830ba)
