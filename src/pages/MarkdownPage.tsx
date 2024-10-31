@@ -119,13 +119,14 @@ const MarkdownPage = () => {
                         a: ({ node, href, ...props }) => {
                             return (
                                 <>
-                                    <ChakraLink
-                                        color="teal.500"
-                                        {...props}
-                                        href={href}
-                                        isExternal
-                                    />
-                                    {href && <MetaDataBox url={href} />}
+                                    {href && (
+                                        <Box>
+                                            <MetaDataBox
+                                                category={convertedPath}
+                                                url={href}
+                                            />
+                                        </Box>
+                                    )}
                                 </>
                             );
                         },

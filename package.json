@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "python path_to_json.py && vite",
+        "dev": "python path_to_json.py && python url_to_json.py && python fetch_metadata.py && vite",
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",

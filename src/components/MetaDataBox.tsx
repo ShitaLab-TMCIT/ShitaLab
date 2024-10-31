@@ -1,79 +1,107 @@
+import { useEffect, useState } from "react";
 import {
-    Box,
-    Heading,
+    Link,
     Text,
     Image,
-    Link as ChakraLink,
+    Heading,
+    HStack,
+    VStack,
+    Spacer,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 
-interface MetaData {
+interface MetadataItem {
     title: string;
     description: string;
+    keywords: string;
     image: string;
+    favicon: string;
+}
+
+interface MetadataCategory {
+    [url: string]: MetadataItem;
+}
+
+interface Metadata {
+    [category: string]: MetadataCategory;
+}
+
+interface MetadataItemBoxProps {
+    category: string;
     url: string;
 }
 
-const MetaDataBox = ({ url }: { url: string }) => {
-    const [metaData, setMetaData] = useState<MetaData | null>(null);
+const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
+    const [item, setItem] = useState<MetadataItem | null>(null);
 
     useEffect(() => {
-        const fetchMetaData = async () => {
+        const fetchMetadata = async () => {
             try {
-                const res = await fetch(
-                    `https://api.url-metadata-fetcher.com?url=${url}`
+                const response = await fetch(
+                    import.meta.env.BASE_URL + "/metadata.json"
                 );
-                const data = await res.json();
-                setMetaData({
-                    title: data.title || "No title",
-                    description: data.description || "No description",
-                    image: data.image || "",
-                    url: url,
-                });
+                const data: Metadata = await response.json();
+
+                const categoryData = data[category];
+                if (categoryData && categoryData[url]) {
+                    setItem(categoryData[url]);
+                } else {
+                    console.error("Specified item not found in metadata.");
+                }
             } catch (error) {
                 console.error("Error fetching metadata:", error);
-                setMetaData({
-                    title: "Failed to load metadata",
-                    description: "",
-                    image: "",
-                    url: url,
-                });
             }
         };
 
-        fetchMetaData();
-    }, [url]);
+        fetchMetadata();
+    }, [category, url]);
+
+    if (!item) {
+        return (
+            <Text>
+                {category}, {url}
+            </Text>
+        );
+    }
 
     return (
-        metaData && (
-            <Box
+        <Link href={url} isExternal _hover={{ textDecoration: "none" }} mb={3}>
+            <HStack
+                p={4}
                 borderWidth="1px"
                 borderRadius="lg"
-                overflow="hidden"
-                p={4}
-                mb={4}
-                maxW="400px"
-                mx="auto"
-                boxShadow="md"
+                _hover={{ shadow: "md" }}
+                align="center"
+                spacing={4}
+                bg="gray.900"
+                color="white"
+                w={{ base: "100%", md: "85%" }}
+                mx={"auto"}
             >
-                {metaData.image && (
-                    <Image
-                        src={metaData.image}
-                        alt={metaData.title}
-                        objectFit="cover"
-                    />
-                )}
-                <Box p={4}>
-                    <Heading size="md" mb={2}>
-                        {metaData.title}
+                <VStack align="start" spacing={1} maxW="70%">
+                    <Heading size="sm" noOfLines={1}>
+                        {item.title}
                     </Heading>
-                    <Text mb={4}>{metaData.description}</Text>
-                    <ChakraLink href={metaData.url} color="teal.500" isExternal>
-                        Visit page
-                    </ChakraLink>
-                </Box>
-            </Box>
-        )
+                    <Text fontSize="sm" color="gray.400" noOfLines={2}>
+                        {item.description}
+                    </Text>
+                    <Text fontSize="xs" color="gray.500" noOfLines={1}>
+                        {item.keywords}
+                    </Text>
+                    <HStack>
+                        <Image
+                            src={item.favicon}
+                            boxSize={"17px"}
+                            bg={"gray.200"}
+                        />
+                        <Text fontSize={"sm"} noOfLines={1} color={"gray.400"}>
+                            {url}
+                        </Text>
+                    </HStack>
+                </VStack>
+                <Spacer />
+                <Image src={item.image} alt={item.title} w={"25%"} />
+            </HStack>
+        </Link>
     );
 };
 
