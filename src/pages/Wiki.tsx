@@ -6,6 +6,8 @@ import {
     AccordionPanel,
     Box,
     Heading,
+    HStack,
+    Icon,
     Spacer,
     Stack,
     Text,
@@ -13,6 +15,8 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { FaFolder } from "react-icons/fa";
 
 type JsonData = {
     [key: string]: string | JsonData;
@@ -58,12 +62,19 @@ const RenderDataAccordion = ({
                                 <>
                                     <Box>
                                         <AccordionButton>
-                                            <Box
-                                                fontWeight={"bold"}
-                                                fontSize={"2xl"}
-                                            >
-                                                {key}
-                                            </Box>
+                                            <HStack>
+                                                <Box
+                                                    fontWeight={"bold"}
+                                                    fontSize={"2xl"}
+                                                >
+                                                    {key}
+                                                </Box>
+                                                <Icon
+                                                    as={FaFolder}
+                                                    boxSize="25px"
+                                                    verticalAlign="middle"
+                                                />
+                                            </HStack>
 
                                             <Spacer />
 
@@ -96,12 +107,13 @@ const Wiki = () => {
             .then((response) => response.json())
             .then((data) => setData(data));
     }, []);
+    document;
 
     return (
         <>
             <VStack w={"100%"}>
-                <Heading as="h1" mb={6}>
-                    JSON Data
+                <Heading as="h1" my={6}>
+                    Document
                 </Heading>
 
                 <RenderDataAccordion data={data} parentKey="" />

@@ -4,9 +4,9 @@ import {
     Heading,
     Text,
     UnorderedList,
-    Link as ChakraLink,
     ListItem,
     Image,
+    Link as ChakraLink,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -23,15 +23,22 @@ import remarkBreaks from "remark-breaks";
 import "katex/dist/katex.min.css";
 import "highlight.js/styles/github-dark-dimmed.css";
 import CodeBlock from "../components/CodeBlock";
+import MetaDataBox from "../components/MetaDataBox";
+import React from "react";
 
 const MarkdownPage = () => {
     const { filepath } = useParams<{ filepath: string }>();
     const [markdownContent, setMarkdownContent] = useState<string>("");
 
     const convertedPath = filepath ? filepath.replace(/-/g, "/") : "";
+
     const directoryPath = convertedPath.substring(
         0,
         convertedPath.lastIndexOf("/")
+    );
+
+    const fileName = convertedPath.substring(
+        convertedPath.lastIndexOf("/") + 1
     );
 
     useEffect(() => {
@@ -69,7 +76,7 @@ const MarkdownPage = () => {
         <>
             <Box w={{ base: "90%", md: "80%", lg: "60%" }} mx="auto" my={10}>
                 <Heading as="h1" mb={6}>
-                    {filepath}
+                    {fileName}
                 </Heading>
 
                 <ReactMarkdown
@@ -109,10 +116,97 @@ const MarkdownPage = () => {
                                 {...props}
                             />
                         ),
-                        p: ({ node, ...props }) => <Text my={2} {...props} />,
-                        a: ({ node, ...props }) => (
-                            <ChakraLink color="teal.500" {...props} />
-                        ),
+                        p: ({ node, children, ...props }) => {
+                            const childArray = React.Children.toArray(children);
+
+                            const blockElementTags: string[] = [
+                                "address",
+                                "article",
+                                "aside",
+                                "blockquote",
+                                "canvas",
+                                "dd",
+                                "div",
+                                "dl",
+                                "dt",
+                                "fieldset",
+                                "figcaption",
+                                "figure",
+                                "footer",
+                                "form",
+                                "h1",
+                                "h2",
+                                "h3",
+                                "h4",
+                                "h5",
+                                "h6",
+                                "header",
+                                "hr",
+                                "li",
+                                "main",
+                                "nav",
+                                "noscript",
+                                "ol",
+                                "p",
+                                "pre",
+                                "section",
+                                "table",
+                                "tfoot",
+                                "ul",
+                                "video",
+                            ];
+
+                            // ブロックレベルのReactコンポーネントの配列
+                            const blockComponents: Array<
+                                React.JSXElementConstructor<any>
+                            > = [MetaDataBox, Heading];
+
+                            // 子要素にブロックレベルの要素が含まれるかチェック
+                            const hasBlockChild = childArray.some((child) => {
+                                if (React.isValidElement(child)) {
+                                    const childType = child.type;
+                                    if (typeof childType === "string") {
+                                        return blockElementTags.includes(
+                                            childType
+                                        );
+                                    } else if (
+                                        typeof childType === "function" ||
+                                        typeof childType === "object"
+                                    ) {
+                                        return blockComponents.includes(
+                                            childType
+                                        );
+                                    }
+                                }
+                                return false;
+                            });
+
+                            if (hasBlockChild) {
+                                return <div {...props}>{children}</div>;
+                            }
+
+                            return (
+                                <Text my={2} {...props}>
+                                    {children}
+                                </Text>
+                            );
+                        },
+                        a: ({ node, href, children, ...props }) => {
+                            if (href) {
+                                return (
+                                    <MetaDataBox
+                                        category={convertedPath}
+                                        url={href}
+                                    />
+                                );
+                            } else {
+                                return (
+                                    <ChakraLink href={href} {...props}>
+                                        {children}
+                                    </ChakraLink>
+                                );
+                            }
+                        },
                         li: ({ node, ...props }) => <ListItem {...props} />,
                         ul: ({ node, ...props }) => (
                             <UnorderedList my={2} {...props} />

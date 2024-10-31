@@ -1,0 +1,27 @@
+{
+    "仕様書": {
+        "https://jp.mathworks.com/help/wlan/ref/wlanmacframe.html": {
+            "title": "wlanMACFrame - Generate WLAN MAC frame (MPDU or A-MPDU) - MATLAB\n- MathWorks 日本",
+            "description": "This MATLAB function generates frame, a WLAN medium access control (MAC) frame for the specified MAC frame configuration object.",
+            "keywords": "",
+            "image": "https://jp.mathworks.com/favicon.ico",
+            "favicon": "https://jp.mathworks.com/favicon.ico"
+        }
+    },
+    "WSL/Windows側初期設定": {
+        "https://learn.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package": {
+            "title": "以前のバージョンの WSL の手動インストール手順 | Microsoft Learn",
+            "description": "wsl install コマンドを使用するのではなく、古いバージョンの Windows に WSL を手動でインストールする手順について段階的に説明します。",
+            "keywords": "wsl, install, BashOnWindows, bash, Linux 用 Windows サブシステム, windows での ubuntu のインストール, WSL2 の有効化, windows での linux",
+            "image": "https://learn.microsoft.com/en-us/media/open-graph-image.png",
+            "favicon": "https://learn.microsoft.com/favicon.ico"
+        },
+        "https://zenn.dev/shimat/articles/c15005cee830ba": {
+            "title": "GitHub PagesにアップロードするGitHub Actions",
+            "description": "",
+            "keywords": "",
+            "image": "https://res.cloudinary.com/zenn/image/upload/s--zhDPNoXu--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:GitHub%2520Pages%25E3%2581%25AB%25E3%2582%25A2%25E3%2583%2583%25E3%2583%2597%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589%25E3%2581%2599%25E3%2582%258BGitHub%2520Actions%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:shimat%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzMxOTgyYTAyNDEuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png",
+            "favicon": "https://static.zenn.studio/images/logo-transparent.png"
+        }
+    }
+}
