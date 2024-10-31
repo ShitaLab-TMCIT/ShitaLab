@@ -77,6 +77,7 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                 w={{ base: "100%", md: "90%" }}
                 mx={"auto"}
                 h={"135px"}
+                my={5}
             >
                 <VStack
                     align="start"
