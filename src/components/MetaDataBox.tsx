@@ -7,6 +7,7 @@ import {
     HStack,
     VStack,
     Spacer,
+    Box,
 } from "@chakra-ui/react";
 
 interface MetadataItem {
@@ -66,7 +67,6 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
     return (
         <Link href={url} isExternal _hover={{ textDecoration: "none" }} mb={3}>
             <HStack
-                p={4}
                 borderWidth="1px"
                 borderRadius="lg"
                 _hover={{ shadow: "md" }}
@@ -74,10 +74,17 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                 spacing={4}
                 bg="gray.900"
                 color="white"
-                w={{ base: "100%", md: "85%" }}
+                w={{ base: "100%", md: "90%" }}
                 mx={"auto"}
+                h={"135px"}
             >
-                <VStack align="start" spacing={1} maxW="70%">
+                <VStack
+                    align="start"
+                    spacing={1}
+                    maxW={{ base: "100%", md: "65%" }}
+                    py={2}
+                    pl={4}
+                >
                     <Heading size="sm" noOfLines={1}>
                         {item.title}
                     </Heading>
@@ -98,8 +105,24 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                         </Text>
                     </HStack>
                 </VStack>
+
                 <Spacer />
-                <Image src={item.image} alt={item.title} w={"25%"} />
+
+                <Box
+                    w={"30%"}
+                    h={"135px"}
+                    overflow="hidden"
+                    borderRadius="lg"
+                    display={{ base: "none", md: "block" }} // モバイルで非表示
+                >
+                    <Image
+                        src={item.image}
+                        alt={item.title}
+                        objectFit="cover"
+                        w="100%"
+                        h="100%"
+                    />
+                </Box>
             </HStack>
         </Link>
     );
