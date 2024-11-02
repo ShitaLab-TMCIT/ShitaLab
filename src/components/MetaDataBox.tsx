@@ -74,7 +74,7 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                 spacing={4}
                 bg="gray.900"
                 color="white"
-                w={{ base: "100%", md: "90%" }}
+                w={{ base: "100%", md: "70%", xl: "750px" }}
                 mx={"auto"}
                 h={"135px"}
                 my={5}
@@ -85,17 +85,29 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                     maxW={{ base: "100%", md: "65%" }}
                     py={2}
                     pl={4}
+                    overflow={"hidden"}
+                    textOverflow={"ellipsis"}
                 >
-                    <Heading size="sm" noOfLines={1}>
+                    <Heading size="sm" noOfLines={1} maxW={"100%"}>
                         {item.title}
                     </Heading>
-                    <Text fontSize="sm" color="gray.400" noOfLines={2}>
+                    <Text
+                        fontSize="sm"
+                        color="gray.400"
+                        noOfLines={2}
+                        maxW={"100%"}
+                    >
                         {item.description}
                     </Text>
-                    <Text fontSize="xs" color="gray.500" noOfLines={1}>
+                    <Text
+                        fontSize="xs"
+                        color="gray.500"
+                        noOfLines={1}
+                        maxW={"100%"}
+                    >
                         {item.keywords}
                     </Text>
-                    <HStack>
+                    <HStack isTruncated maxW={"100%"}>
                         <Image
                             src={item.favicon}
                             boxSize={"17px"}
