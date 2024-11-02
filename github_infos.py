@@ -17,6 +17,7 @@ else:
     token = os.getenv("VITE_GITHUB_TOKEN")
 
 
+
 print(f"Token: {token[:4]}...")  # トークンの一部のみを表示
 
 
@@ -25,8 +26,8 @@ if token is None:
 
 # 対象リポジトリのオーナーとリポジトリ名のリスト
 repos = [
-    {"owner": "hamuchan214", "repo": "IEEE802.11simulator"},
     {"owner": "ryoww", "repo": "ShitaLab"},
+    {"owner": "hamuchan214", "repo": "IEEE802.11simulator"},
 ]
 
 # 全リポジトリのデータを保存するリスト
@@ -38,7 +39,8 @@ for repo_info in repos:
     repo = repo_info["repo"]
 
     url = f"https://api.github.com/repos/{owner}/{repo}"
-    headers = {"Authorization": f"token {token}"}
+    headers = {"Authorization": f"Bearer {token}"}
+
 
     response = requests.get(url, headers=headers)
     repo_data = response.json()
