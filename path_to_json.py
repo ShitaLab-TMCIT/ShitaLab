@@ -1,51 +1,80 @@
-import os
-import json
+from collections import defaultdict
 from datetime import datetime
+import json
+import os
+from pathlib import Path
 
-def get_file_timestamp(path):
-    timestamp = os.path.getmtime(path)
-    return datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
+def update(d: dict, u: dict):
+    """再帰的に辞書を更新する関数"""
+    for k, v in u.items():
+        if isinstance(v, dict):
+            d[k] = update(d.get(k, {}), v)
+        else:
+            d[k] = v
+    return d
 
-def remove_extension(file_name):
-    return os.path.splitext(file_name)[0]
+def set_recursive_dir(dirs: list[str], value: dict):
+    """ディレクトリパスに沿って再帰的に辞書を作成する関数"""
+    structure = defaultdict(dict)
+    _structure = structure
+    for dir in dirs:
+        _structure = _structure.setdefault(dir, {})
+    _structure.update(value)
+    return structure
 
-def dir_to_dict(path):
-    dir_dict = {}
-    dirs = []
-    files = []
-    
-    with os.scandir(path) as it:
-        for entry in it:
-            if entry.is_dir():
-                # ディレクトリ名が 'assets' の場合はスキップ
-                if entry.name != 'assets':
-                    dirs.append(entry)
-            else:
-                # ファイルの拡張子が .md の場合のみリストに追加
-                if entry.name.endswith('.md'):
-                    files.append(entry) 
+def top_dict(d: dict):
+    """ネストされた辞書をフラットにする関数"""
+    result = {}
+    queue = {}
+    for k, v in d.items():
+        if isinstance(v, dict):
+            result[k] = top_dict(v)
+        else:
+            queue[k] = v
+    result.update(queue)
+    return result
 
-    for directory in sorted(dirs, key=lambda e: os.path.getmtime(e.path), reverse=True):
-        dir_dict[directory.name] = dir_to_dict(directory.path)
+def get_nested_value(d, keys):
+    """ネストされた辞書から値を取得する関数"""
+    for key in keys:
+        if isinstance(d, dict) and key in d:
+            d = d[key]
+        else:
+            return None
+    return d
 
-    for file in sorted(files, key=lambda e: os.path.getmtime(e.path), reverse=True):
-        file_name_without_extension = remove_extension(file.name)
-        dir_dict[file_name_without_extension] = get_file_timestamp(file.path)
+directory_to_scan = "./public/md/"
+output_json_file = "./public/file_path.json"
 
-    return dir_dict
+root = Path(directory_to_scan)
+directory_structure = {}
 
-def save_structure_to_json(structure, output_file):
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(structure, f, ensure_ascii=False, indent=4)
+# 既存の構造を読み込む
+if os.path.exists(output_json_file):
+    with open(output_json_file, 'r', encoding='utf-8') as f:
+        existing_structure = json.load(f)
+else:
+    existing_structure = {}
 
-if __name__ == "__main__":
-    directory_to_scan = "./public/md/"
-    output_json_file = "./public/file_path.json"
-    
-    directory_structure = dir_to_dict(directory_to_scan)
-    
-    save_structure_to_json(directory_structure, output_json_file)
-    
-    print(directory_structure)
-    
-    print(f"saved '{output_json_file}'")
+# ソートをタイムスタンプとファイル名で行う
+md_files = sorted(
+    root.glob('**/*.md'),
+    key=lambda e: (-os.path.getmtime(e), e.name)
+)
+
+for file in md_files:
+    parts = file.relative_to(root).parts[:-1]  # ディレクトリ部分
+    filename = file.stem  # 拡張子を除いたファイル名
+    path_list = list(parts) + [filename]
+    existing_value = get_nested_value(existing_structure, path_list)
+    if existing_value is not None:
+        timestamp = existing_value
+    else:
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    structure_dict = set_recursive_dir(parts, {filename: timestamp})
+    directory_structure = update(directory_structure, structure_dict)
+
+directory_structure = top_dict(directory_structure)
+
+with open(output_json_file, 'w', encoding='utf-8') as f:
+    json.dump(directory_structure, f, ensure_ascii=False, indent=4)
