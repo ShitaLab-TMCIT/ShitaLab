@@ -75,7 +75,13 @@ const MarkdownPage = () => {
     return (
         <>
             <Box w={{ base: "90%", md: "80%", lg: "60%" }} mx="auto" my={10}>
-                <Heading as="h1" mb={6}>
+                <Heading
+                    as="h1"
+                    mb={6}
+                    fontSize={{ base: "30px", md: "45px" }}
+                    wordBreak={"break-word"}
+                    whiteSpace={"pre-line"}
+                >
                     {fileName}
                 </Heading>
 
