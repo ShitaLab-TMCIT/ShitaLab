@@ -43,9 +43,17 @@ jobs:
                   pip install -r requirements.txt
 
             # Pythonスクリプトの実行
-            - name: Run Python script
+            - name: Run Python script. path_to_json.py
               run: |
                   python path_to_json.py
+
+            - name: Run Python script. url_to_json.py
+              run: |
+                  python url_to_json.py
+
+            - name: Run Python script. fetch_metadata.py
+              run: |
+                  python fetch_metadata.py
 
             # Node.js依存関係のインストール
             - run: npm ci
