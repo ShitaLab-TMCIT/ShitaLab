@@ -1,7 +1,6 @@
 import { Box, Code, IconButton, useClipboard } from "@chakra-ui/react";
 import { CopyIcon, CheckIcon } from "@chakra-ui/icons";
 import React, { useState } from "react";
-// import Editor from "@monaco-editor/react";
 
 export interface CodeBlockProps {
     className?: string;
@@ -42,7 +41,7 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
             position={"relative"}
             w={{ base: "100%", md: "80%" }}
             mx={"auto"}
-            my={5}
+            my={"45px"}
             gap={0}
         >
             {/* コピーボタンを右上に配置 */}
