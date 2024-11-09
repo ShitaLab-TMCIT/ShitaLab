@@ -1,16 +1,5 @@
 [
     {
-        "name": "ShitaLab",
-        "description": null,
-        "stargazers_count": 1,
-        "forks_count": 0,
-        "html_url": "https://github.com/ryoww/ShitaLab",
-        "owner": {
-            "login": "ryoww",
-            "avatar_url": "https://avatars.githubusercontent.com/u/75125472?v=4"
-        }
-    },
-    {
         "name": "IEEE802.11simulator",
         "description": "Network simulator for IEEE802.11 (Wi-Fi) using MATLAB",
         "stargazers_count": 2,
@@ -19,6 +8,17 @@
         "owner": {
             "login": "hamuchan214",
             "avatar_url": "https://avatars.githubusercontent.com/u/104348967?v=4"
+        }
+    },
+    {
+        "name": "ShitaLab",
+        "description": null,
+        "stargazers_count": 1,
+        "forks_count": 0,
+        "html_url": "https://github.com/ryoww/ShitaLab",
+        "owner": {
+            "login": "ryoww",
+            "avatar_url": "https://avatars.githubusercontent.com/u/75125472?v=4"
         }
     }
 ]
