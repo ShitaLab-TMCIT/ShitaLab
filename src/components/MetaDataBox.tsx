@@ -82,7 +82,7 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                 <VStack
                     align="start"
                     spacing={1}
-                    maxW={{ base: "100%", md: "65%" }}
+                    maxW={{ base: "100%", lg: "65%" }}
                     py={2}
                     pl={4}
                     overflow={"hidden"}
@@ -126,7 +126,7 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                     h={"135px"}
                     overflow="hidden"
                     borderRadius="lg"
-                    display={{ base: "none", md: "block" }} // モバイルで非表示
+                    display={{ base: "none", lg: "block" }} // モバイルで非表示
                 >
                     <Image
                         src={item.image}

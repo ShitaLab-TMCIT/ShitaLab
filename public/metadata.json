@@ -1,13 +1,4 @@
 {
-    "仕様書": {
-        "https://jp.mathworks.com/help/wlan/ref/wlanmacframe.html": {
-            "title": "wlanMACFrame - Generate WLAN MAC frame (MPDU or A-MPDU) - MATLAB\n- MathWorks 日本",
-            "description": "This MATLAB function generates frame, a WLAN medium access control (MAC) frame for the specified MAC frame configuration object.",
-            "keywords": "",
-            "image": "https://jp.mathworks.com/favicon.ico",
-            "favicon": "https://jp.mathworks.com/favicon.ico"
-        }
-    },
     "Markdown記法": {
         "https://qiita.com/Qiita/items/c686397e4a0f4f11683d": {
             "title": "Markdown記法 チートシート #Qiita - Qiita",
@@ -15,6 +6,36 @@
             "keywords": "Qiita,Markdown",
             "image": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY4OCUyRmNjZjkwYjU1N2E0MDYxNTdkYmI5ZDJkN2U1NDNkYWUzODRkYmI1NjElMkZsYXJnZS5wbmclM0YxNTc1NDQzNDM5P2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZmbT1wbmczMiZzPWIwNjY3Y2FjNzFlNzRiZWYxMDdmNjNlODcyYTQ5MTll%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D2ff846b219b03ff11542a0619ae446fb?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9TWFya2Rvd24lRTglQTglOTglRTYlQjMlOTUlMjAlRTMlODMlODElRTMlODMlQkMlRTMlODMlODglRTMlODIlQjclRTMlODMlQkMlRTMlODMlODgmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz1iN2IxOGYwYzZjYmFkOTExOWIyZTY2NDkxZWM4NTEyOQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBRaWl0YSZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTA2MWVmNzYzOTE3OGQyNWU5MWI4M2ZkY2ViYTcxYWE1&blend-x=242&blend-y=454&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&txt64=aW4gUWlpdGHmoKrlvI_kvJrnpL4&txt-x=242&txt-y=539&txt-width=838&txt-clip=end%2Cellipsis&txt-color=%231E2121&txt-font=Hiragino%20Sans%20W6&txt-size=28&s=e7e05dd0f49c0b2180ca894418cea9bb",
             "favicon": "https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico"
+        },
+        "https://qiita.com/ryo-ww/items/7c2b8a7519bd9a06dfd9": {
+            "title": "Raspberry Pi Start Up #RaspberryPi - Qiita",
+            "description": "初めてラズパイのセットアップをするときに躓いたところを分かりやすく解決する方法(筆者はラズパイにおいてGUIなんていらない教なので注意)OSインストールRaspberry Pi ImagerでD…",
+            "keywords": "RaspberryPi",
+            "image": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmxoMy5nb29nbGV1c2VyY29udGVudC5jb20lMkZhLSUyRkFBdUU3bUR3c0tKSzQyZXdNVF92Q2YtakpxYVdodk84SGd1SHpkQmU4eFhkJTNEczUwP2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZmbT1wbmczMiZzPWE3NDhmZWE5OTEzYWIzMWI5NjdhYjAwYTRhZDU3YTRj%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Dafc8fc85c40a34da6aafdf260a6dc6d2?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9UmFzcGJlcnJ5JTIwUGklMjBTdGFydCUyMFVwJnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9ZGM0NWE3NjQ1NmFiOWYzNDA5ZjdlY2Y3OTlkYzU0MjY&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDByeW8td3cmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz0zN2Y0YWQ3NjJhMGZmODFlOTg3MjA3NmM4NDQwMzViZg&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=b754d736558e3f6342f0eb7b9dc125ab",
+            "favicon": "https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico"
+        },
+        "https://www.webfx.com/tools/emoji-cheat-sheet/": {
+            "title": "🎁 Emoji cheat sheet for GitHub, Basecamp, Slack & more",
+            "description": "Emoji codes used by GitHub, Basecamp, Slack and other services. Searchable. With emoji meanings.",
+            "keywords": "",
+            "image": "https://www.webfx.com/wp-content/uploads/2024/10/webfx-fallback-img.png",
+            "favicon": "https://www.webfx.com/wp-content/uploads/2021/10/favicon.png"
+        },
+        "https://ryoww.github.io/ShitaLab/": {
+            "title": "ShitaLab",
+            "description": "",
+            "keywords": "",
+            "image": "https://ryoww.github.io/ShitaLab/wifi.svg",
+            "favicon": "https://ryoww.github.io/ShitaLab/wifi.svg"
+        }
+    },
+    "仕様書": {
+        "https://jp.mathworks.com/help/wlan/ref/wlanmacframe.html": {
+            "title": "wlanMACFrame - Generate WLAN MAC frame (MPDU or A-MPDU) - MATLAB\n- MathWorks 日本",
+            "description": "This MATLAB function generates frame, a WLAN medium access control (MAC) frame for the specified MAC frame configuration object.",
+            "keywords": "",
+            "image": "https://jp.mathworks.com/favicon.ico",
+            "favicon": "https://jp.mathworks.com/favicon.ico"
         }
     },
     "WSL/Windows側初期設定": {

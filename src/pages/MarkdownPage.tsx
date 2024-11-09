@@ -74,7 +74,12 @@ const MarkdownPage = () => {
 
     return (
         <>
-            <Box w={{ base: "90%", md: "80%", lg: "60%" }} mx="auto" my={10}>
+            <Box
+                w={{ base: "90%", md: "80%", lg: "60%" }}
+                mx="auto"
+                my={10}
+                mb={"500px"}
+            >
                 <Heading
                     as="h1"
                     mb={6}
@@ -99,7 +104,7 @@ const MarkdownPage = () => {
                             <Heading
                                 as="h1"
                                 size="xl"
-                                mt={8}
+                                mt={"50px"}
                                 mb={3}
                                 {...props}
                             />
@@ -108,7 +113,7 @@ const MarkdownPage = () => {
                             <Heading
                                 as="h2"
                                 size="lg"
-                                mt={8}
+                                mt={"50px"}
                                 mb={3}
                                 {...props}
                             />
@@ -117,7 +122,7 @@ const MarkdownPage = () => {
                             <Heading
                                 as="h3"
                                 size="md"
-                                mt={8}
+                                mt={"50px"}
                                 mb={3}
                                 {...props}
                             />
@@ -192,7 +197,7 @@ const MarkdownPage = () => {
                             }
 
                             return (
-                                <Text my={2} {...props}>
+                                <Text my={"20px"} {...props} fontSize={"18px"}>
                                     {children}
                                 </Text>
                             );
@@ -215,7 +220,7 @@ const MarkdownPage = () => {
                         },
                         li: ({ node, ...props }) => <ListItem {...props} />,
                         ul: ({ node, ...props }) => (
-                            <UnorderedList my={2} {...props} />
+                            <UnorderedList my={"10px"} {...props} />
                         ),
                         img: ({ node, src, alt, ...props }) => {
                             if (!src) {

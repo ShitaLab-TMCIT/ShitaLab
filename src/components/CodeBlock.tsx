@@ -41,7 +41,7 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
             position={"relative"}
             w={{ base: "100%", md: "80%" }}
             mx={"auto"}
-            my={5}
+            my={"45px"}
             gap={0}
         >
             {/* コピーボタンを右上に配置 */}
