@@ -1,7 +1,6 @@
 import { Box, Code, IconButton, useClipboard } from "@chakra-ui/react";
 import { CopyIcon, CheckIcon } from "@chakra-ui/icons";
 import React, { useState } from "react";
-// import Editor from "@monaco-editor/react";
 
 export interface CodeBlockProps {
     className?: string;
