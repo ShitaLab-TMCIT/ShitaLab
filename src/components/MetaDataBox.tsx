@@ -8,6 +8,7 @@ import {
     VStack,
     Spacer,
     Box,
+    useColorModeValue,
 } from "@chakra-ui/react";
 
 interface MetadataItem {
@@ -64,6 +65,11 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
         );
     }
 
+    const bg = useColorModeValue("gray.100", "gray.900");
+    const color = useColorModeValue("gray", "white");
+    const titleTextColor = useColorModeValue("gray.800", "gray.200");
+    const secondaryTextColor = useColorModeValue("gray.600", "gray.400");
+
     return (
         <Link href={url} isExternal _hover={{ textDecoration: "none" }} mb={3}>
             <HStack
@@ -72,8 +78,8 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                 _hover={{ shadow: "md" }}
                 align="center"
                 spacing={4}
-                bg="gray.900"
-                color="white"
+                bg={bg}
+                color={color}
                 w={{ base: "100%", md: "70%", xl: "750px" }}
                 mx={"auto"}
                 h={"135px"}
@@ -88,12 +94,17 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                     overflow={"hidden"}
                     textOverflow={"ellipsis"}
                 >
-                    <Heading size="sm" noOfLines={1} maxW={"100%"}>
+                    <Heading
+                        size="sm"
+                        noOfLines={1}
+                        maxW={"100%"}
+                        color={titleTextColor}
+                    >
                         {item.title}
                     </Heading>
                     <Text
                         fontSize="sm"
-                        color="gray.400"
+                        color={secondaryTextColor}
                         noOfLines={2}
                         maxW={"100%"}
                     >
@@ -108,12 +119,12 @@ const MetaDataBox = ({ category, url }: MetadataItemBoxProps) => {
                         {item.keywords}
                     </Text>
                     <HStack isTruncated maxW={"100%"}>
-                        <Image
-                            src={item.favicon}
-                            boxSize={"17px"}
-                            bg={"gray.200"}
-                        />
-                        <Text fontSize={"sm"} noOfLines={1} color={"gray.400"}>
+                        <Image src={item.favicon} boxSize={"17px"} />
+                        <Text
+                            fontSize={"sm"}
+                            noOfLines={1}
+                            color={secondaryTextColor}
+                        >
                             {url}
                         </Text>
                     </HStack>

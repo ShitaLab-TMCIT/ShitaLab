@@ -1,4 +1,4 @@
-import { Box, Code, IconButton, useClipboard } from "@chakra-ui/react";
+import { Box, Code, IconButton, useClipboard, Text } from "@chakra-ui/react";
 import { CopyIcon, CheckIcon } from "@chakra-ui/icons";
 import React, { useState } from "react";
 
@@ -9,6 +9,10 @@ export interface CodeBlockProps {
 
 const CodeBlock = ({ className, children }: CodeBlockProps) => {
     const [isCopied, setIsCopied] = useState(false);
+
+    // className を ":" で分割して、前半と後半を取得
+    const [language, fileName] = (className || "").split(":");
+
     const extractTextFromChildren = (children: React.ReactNode): string => {
         if (typeof children === "string") {
             return children;
@@ -25,10 +29,7 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
     };
 
     const code = extractTextFromChildren(children).trim();
-    // const code = String(children).trim();
     const { onCopy } = useClipboard(code);
-
-    // const language = className?.replace("language-", "") || "python";
 
     const handleCopy = () => {
         onCopy();
@@ -43,7 +44,29 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
             mx={"auto"}
             my={"45px"}
             gap={0}
+            rounded={"lg"}
+            bg={"gray.700"}
+            pb={"10px"}
+            pt={"10px"}
         >
+            {/* ファイル名のラベルをCodeの上部に配置 */}
+            {fileName && (
+                <Text
+                    position="absolute"
+                    top="-10px" // 上に配置して内容と重ならないように調整
+                    left="0"
+                    fontSize="sm"
+                    fontWeight="bold"
+                    bg="gray.100"
+                    px={2}
+                    py={1}
+                    borderRadius="md"
+                    zIndex={1}
+                >
+                    {fileName}
+                </Text>
+            )}
+
             {/* コピーボタンを右上に配置 */}
             <IconButton
                 aria-label={"Copy code"}
@@ -53,25 +76,18 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
                 position={"absolute"}
                 right={0}
                 zIndex={1}
-                mr={{ base: 0 }}
+                mt={2}
+                mr={2}
             />
 
-            {/* <Editor
-                height={"400px"}
-                defaultLanguage={language}
-                value={code}
-                options={{
-                    readOnly: true,
-                    minimap: { enabled: false },
-                    scrollBeyondLastLine: false,
-                }}
-            /> */}
-
-            {/* Codeコンポーネントの内容 */}
+            {/* Code component with language class */}
             <Code
                 w={{ base: "100%" }}
                 whiteSpace={"pre-wrap"}
-                className={className}
+                className={language}
+                mt={6} // ラベル分の高さ調整
+                bg={"gray.700"}
+                color={"white"}
             >
                 {children}
             </Code>
