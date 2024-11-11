@@ -66,7 +66,7 @@ const Header = () => {
                     aria-label="Toggle Color Mode"
                     onClick={toggleColorMode}
                     isRound
-                    bg={colorMode === "light" ? "gray.300" : "gray.800"}
+                    bg={colorMode === "light" ? "gray.50" : "gray.800"}
                 />
             </HStack>
 

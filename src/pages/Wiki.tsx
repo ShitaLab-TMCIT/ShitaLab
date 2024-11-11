@@ -35,7 +35,7 @@ const RenderDataAccordion = ({
 
     return (
         <Box w={{ base: "350px", md: "600px", lg: "800px" }}>
-            <Accordion allowMultiple>
+            <Accordion allowMultiple borderColor={"gray.200"}>
                 {Object.keys(data).map((key, index) => {
                     const currentPath = parentKey ? `${parentKey}-${key}` : key;
                     const uniqueKey = `${currentPath}-${index}`;

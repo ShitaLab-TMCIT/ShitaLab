@@ -47,21 +47,23 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
             rounded={"lg"}
             bg={"gray.700"}
             pb={"10px"}
-            pt={"10px"}
+            pt={1}
         >
             {/* ファイル名のラベルをCodeの上部に配置 */}
             {fileName && (
                 <Text
                     position="absolute"
-                    top="-10px" // 上に配置して内容と重ならないように調整
-                    left="0"
                     fontSize="sm"
                     fontWeight="bold"
-                    bg="gray.100"
-                    px={2}
+                    bg="gray.600"
+                    px={3}
                     py={1}
-                    borderRadius="md"
+                    borderBottomRadius={"md"}
                     zIndex={1}
+                    ml={7}
+                    mt={"-4px"}
+                    color={"white"}
+                    h={"30px"}
                 >
                     {fileName}
                 </Text>
@@ -76,8 +78,8 @@ const CodeBlock = ({ className, children }: CodeBlockProps) => {
                 position={"absolute"}
                 right={0}
                 zIndex={1}
-                mt={2}
-                mr={2}
+                mt={"-4px"}
+                mr={0}
             />
 
             {/* Code component with language class */}
