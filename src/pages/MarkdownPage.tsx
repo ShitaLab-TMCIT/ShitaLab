@@ -82,7 +82,7 @@ const MarkdownPage = () => {
                 w={{ base: "90%", md: "80%", lg: "60%" }}
                 mx="auto"
                 my={10}
-                mb={"500px"}
+                mb={"200px"}
             >
                 <Heading
                     as="h1"
