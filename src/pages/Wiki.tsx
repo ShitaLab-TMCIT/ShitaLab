@@ -11,6 +11,7 @@ import {
     Spacer,
     Stack,
     Text,
+    useColorMode,
     VStack,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
@@ -33,9 +34,14 @@ const RenderDataAccordion = ({
         return parentKey.split("-").length;
     };
 
+    const { colorMode } = useColorMode();
+
     return (
         <Box w={{ base: "350px", md: "600px", lg: "800px" }}>
-            <Accordion allowMultiple borderColor={"gray.200"}>
+            <Accordion
+                allowMultiple
+                borderColor={colorMode === "light" ? "gray.800" : "gray.200"}
+            >
                 {Object.keys(data).map((key, index) => {
                     const currentPath = parentKey ? `${parentKey}-${key}` : key;
                     const uniqueKey = `${currentPath}-${index}`;

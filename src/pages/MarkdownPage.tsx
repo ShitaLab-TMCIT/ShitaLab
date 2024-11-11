@@ -7,6 +7,8 @@ import {
     ListItem,
     Image,
     Link as ChakraLink,
+    Divider,
+    useColorMode,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -27,6 +29,8 @@ import MetaDataBox from "../components/MetaDataBox";
 import React from "react";
 
 const MarkdownPage = () => {
+    const { colorMode } = useColorMode();
+
     const { filepath } = useParams<{ filepath: string }>();
     const [markdownContent, setMarkdownContent] = useState<string>("");
 
@@ -259,6 +263,17 @@ const MarkdownPage = () => {
                                 );
                             }
                         },
+                        hr: ({ node, ...props }) => (
+                            <Divider
+                                borderWidth={"1px"}
+                                borderColor={
+                                    colorMode === "light"
+                                        ? "gray.700"
+                                        : "gray.100"
+                                }
+                                {...props}
+                            />
+                        ),
                     }}
                 >
                     {markdownContent}
