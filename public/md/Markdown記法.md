@@ -10,9 +10,8 @@
 
 ---
 
-**書き方**
 
-```markdown:**書き方**.md
+```markdown:書き方.md
 # これは H1 タグです
 
 ## これは H2 タグです
@@ -37,9 +36,8 @@
 
 ## Code blocks - コードブロック
 
-**書き方**
 
-````python
+````python:書き方
 ```python:test.py
 print('Hello')
 print('World')
@@ -55,9 +53,8 @@ print('World')
 
 ## Code spans - コードスパン
 
-**書き方**
 
-```markdown
+```markdown:書き方
 `puts 'ShitaLab'`と書くことでインライン表示することが可能
 ```
 
@@ -72,9 +69,8 @@ print('World')
 
 ## Emphasis / Strong Emphasis - 強調・強勢
 
-**書き方**
 
-```markdown
+```markdown:書き方
 \ か * で囲むと HTML の em タグになります。Qiita では *italic type* になります。
 \\ か ** で囲むと HTML の strong タグになります。Qiita では **太字** になります。
 ```
@@ -86,9 +82,8 @@ print('World')
 
 ## Strikethrough - 打ち消し線
 
-**書き方**
 
-```markdown
+```markdown:書き方
 打ち消し線を使うには ~~ で囲みます。 ~~打ち消し~~
 ```
 
@@ -104,9 +99,8 @@ print('World')
 
 ## Bullet List - 順序なしリスト
 
-**書き方**
 
-```markdown
+```markdown:書き方
 - 文頭に`*` `+` `-`のいずれかを入れると順序なしリストになります
 + 要点をまとめる際に便利です
 * `*` `+` `-`の後には **スペースが必要です**
@@ -127,9 +121,8 @@ print('World')
 
 ---
 
-**書き方**
 
-```markdown
+```markdown:書き方
 ---
 これら
 * * *
@@ -161,9 +154,8 @@ print('World')
 
 なんと素晴らしいことにリンクを貼るとメタデータを取得していい感じのBoxにしてくれる
 
-**書き方**
 
-```markdown
+```markdown:書き方
 [神記事](https://qiita.com/ryo-ww/items/7c2b8a7519bd9a06dfd9)
 ```
 
@@ -191,9 +183,8 @@ print('World')
 
 **また、画像のパスの指定の仕方は`フォルダ名/画像の名前`にしてください(`./`等は入れないようにしてください)**
 
-**書き方**
 
-```markdown
+```markdown:書き方
 ## タイトルありの画像を埋め込む
 ![代替テキスト](画像のURL "画像タイトル")
 
@@ -225,7 +216,7 @@ print('World')
 
 数式の書き方は自分で調べてほしい
 
-````markdown
+````markdown:書き方
 ```math
 \left( \sum_{k=1}^n a_k b_k \right)^{\!\!2} \leq
 \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
@@ -279,9 +270,8 @@ $$
 
 `$2^3$` のように数式を "$" で挟むと行中に数式を埋め込むこともできる
 
-**書き方**
 
-```markdown
+```markdown:書き方
 x^2 + y^2 = 1 をインライン表示すると $x^2 + y^2 = 1$ になります。
 
 $R_{1}$のように文中に下付き文字を作りたい場合にも使えます
@@ -308,9 +298,8 @@ $R_{1}$のように文中に下付き文字を文中に作りたい場合にも�
 
 [Emoji](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
-**書き方**
 
-```markdown
+```markdown:書き方
 :warning:
 :kissing_closed_eyes: chu☆
 🫠
@@ -334,7 +323,7 @@ $R_{1}$のように文中に下付き文字を文中に作りたい場合にも�
 
 バックスラッシュ`\`をMarkdownの前に挿入することで、Markdownをエスケープ(無効化)することができます
 
-```markdown
+```markdown:書き方
 \# H1 エスケープされています
 ```
 
