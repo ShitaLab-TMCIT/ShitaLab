@@ -1,4 +1,12 @@
 {
+    "LaTeX環境構築": [
+        "https://www.tug.org/texlive/acquire-netinstall.html",
+        "https://qiita.com/SuzuTomo2001/items/07c3ba6ff9f29ebf6282",
+        "https://ja.overleaf.com/latex/templates/tagged/lualatex",
+        "https://github.com/Jonathan-LeRoux/IguanaTex/releases",
+        "https://ghostscript.com/releases/gsdnld.html",
+        "https://imagemagick.org/script/download.php"
+    ],
     "仕様書": [
         "https://jp.mathworks.com/help/wlan/ref/wlanmacframe.html"
     ],

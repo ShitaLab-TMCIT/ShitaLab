@@ -1,4 +1,48 @@
 {
+    "LaTeX環境構築": {
+        "https://www.tug.org/texlive/acquire-netinstall.html": {
+            "title": "Installing TeX Live over the Internet - TeX Users Group",
+            "description": "",
+            "keywords": "",
+            "image": "https://www.tug.org/favicon.ico",
+            "favicon": "https://www.tug.org/favicon.ico"
+        },
+        "https://qiita.com/SuzuTomo2001/items/07c3ba6ff9f29ebf6282": {
+            "title": "俺のPCにTeX Live fullスキームなんて入るはずがない #Windows - Qiita",
+            "description": "ちゃんとした題：WindowsでLuaLaTeXの最小環境を構築してみるこんにちは。油断するとを「テックス」と呼んでしまうすずともです。僕の持ち運び用PC「初代SurfaceBook…",
+            "keywords": "LaTeX,Windows,LuaLaTeX",
+            "image": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGMjU1MzYwJTJGcHJvZmlsZS1pbWFnZXMlMkYxNjU0MDY2MDYyP2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZmbT1wbmczMiZzPWM0N2M3ZmYxNDkzY2Y5MTFhNjhmN2U5YmZlMDI5NGQz%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Da5b2da75f01c1997d314c53926090265?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9JUU0JUJGJUJBJUUzJTgxJUFFUEMlRTMlODElQUJUZVglMjBMaXZlJTIwZnVsbCVFMyU4MiVCOSVFMyU4MiVBRCVFMyU4MyVCQyVFMyU4MyVBMCVFMyU4MSVBQSVFMyU4MiU5MyVFMyU4MSVBNiVFNSU4NSVBNSVFMyU4MiU4QiVFMyU4MSVBRiVFMyU4MSU5QSVFMyU4MSU4QyVFMyU4MSVBQSVFMyU4MSU4NCZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPWFlZTc2MDU5YjczMTRiZTlmMjIxOWIxMGZmYmFhNjgz&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBTdXp1VG9tbzIwMDEmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz1jMmQyMjQwNDVkYjE5NjQ2NmI3ODEwYmI4ZmFhYzdiZg&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=972585f0b207521cc9237deb05a68b23",
+            "favicon": "https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico"
+        },
+        "https://ja.overleaf.com/latex/templates/tagged/lualatex": {
+            "title": "Templates - Journals, CVs, Presentations, Reports and More - Overleaf, オンラインLaTeXエディター",
+            "description": "Produce beautiful documents starting from our gallery of LaTeX templates for journals, conferences, theses, reports, CVs and much more.",
+            "keywords": "",
+            "image": "https://cdn.overleaf.com/img/ol-brand/overleaf_og_logo.png",
+            "favicon": "https://ja.overleaf.com/favicon-32x32.png"
+        },
+        "https://github.com/Jonathan-LeRoux/IguanaTex/releases": {
+            "title": "Releases · Jonathan-LeRoux/IguanaTex · GitHub",
+            "description": "A PowerPoint add-in allowing you to insert LaTeX equations into PowerPoint presentations on Windows and Mac - Releases · Jonathan-LeRoux/IguanaTex",
+            "keywords": "",
+            "image": "https://opengraph.githubassets.com/dbe99c5313cb16927be1c4f33890d8c8d6c81fabc76f424b591494737299811a/Jonathan-LeRoux/IguanaTex",
+            "favicon": "https://github.githubassets.com/favicons/favicon.png"
+        },
+        "https://ghostscript.com/releases/gsdnld.html": {
+            "title": "Ghostscript : Downloads",
+            "description": "Download the latest Ghostcript releases.",
+            "keywords": "",
+            "image": "https://ghostscript.com/images/favicon.svg",
+            "favicon": "https://ghostscript.com/images/favicon.svg"
+        },
+        "https://imagemagick.org/script/download.php": {
+            "title": "ImageMagick – Download",
+            "description": "ImageMagick is a powerful, open-source software suite for creating, editing, converting, and manipulating images in over 200 formats. Ideal for web developers, graphic designers, and researchers, it offers versatile tools for image processing, including batch processing, format conversion, and complex image transformations.",
+            "keywords": "Download, Image Processing, Digital Image Editing, Image Conversion, Open-Source Software, Image Manipulation, Command-Line Image Tools",
+            "image": "https://imagemagick.org/image/logo.png",
+            "favicon": "https://imagemagick.org/image/wand.png"
+        }
+    },
     "仕様書": {
         "https://jp.mathworks.com/help/wlan/ref/wlanmacframe.html": {
             "title": "wlanMACFrame - Generate WLAN MAC frame (MPDU or A-MPDU) - MATLAB\n- MathWorks 日本",
