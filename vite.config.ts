@@ -26,11 +26,5 @@ export default defineConfig({
     base: "/ShitaLab/",
     build: {
         outDir: "./docs",
-        rollupOptions: {
-            input: {
-                main: "./index.html",
-                fallback: "./404.html",
-            },
-        },
     },
 });
