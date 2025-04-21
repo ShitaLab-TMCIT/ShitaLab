@@ -23,13 +23,13 @@
         },
         "https://github.com/Jonathan-LeRoux/IguanaTex/releases": {
             "title": "Releases · Jonathan-LeRoux/IguanaTex · GitHub",
-            "description": "A PowerPoint add-in allowing you to insert LaTeX equations into PowerPoint presentations on Windows and Mac - Releases · Jonathan-LeRoux/IguanaTex",
+            "description": "A PowerPoint add-in to insert LaTeX equations into PowerPoint presentations on Windows and Mac - Releases · Jonathan-LeRoux/IguanaTex",
             "keywords": "",
-            "image": "https://opengraph.githubassets.com/dbe99c5313cb16927be1c4f33890d8c8d6c81fabc76f424b591494737299811a/Jonathan-LeRoux/IguanaTex",
+            "image": "https://opengraph.githubassets.com/45959f7ac5fc376fd186aeed3169a3bd95ea9caf9d7a80fd3f8b12210c488121/Jonathan-LeRoux/IguanaTex",
             "favicon": "https://github.githubassets.com/favicons/favicon.png"
         },
         "https://ghostscript.com/releases/gsdnld.html": {
-            "title": "Ghostscript : Downloads",
+            "title": "Ghostscript : Releases",
             "description": "Download the latest Ghostcript releases.",
             "keywords": "",
             "image": "https://ghostscript.com/images/favicon.svg",
@@ -45,11 +45,11 @@
     },
     "仕様書": {
         "https://jp.mathworks.com/help/wlan/ref/wlanmacframe.html": {
-            "title": "wlanMACFrame - Generate WLAN MAC frame (MPDU or A-MPDU) - MATLAB\n- MathWorks 日本",
-            "description": "This MATLAB function generates frame, a WLAN medium access control (MAC) frame for the specified MAC frame configuration object.",
+            "title": "wlanMACFrame\n",
+            "description": "",
             "keywords": "",
-            "image": "https://jp.mathworks.com/favicon.ico",
-            "favicon": "https://jp.mathworks.com/favicon.ico"
+            "image": "https://jp.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/favicon.20250319210055406.ico",
+            "favicon": "https://jp.mathworks.com/etc.clientlibs/mathworks/clientlibs/customer-ui/templates/common/resources/images/favicon.20250319210055406.ico"
         }
     },
     "Markdown記法": {
@@ -57,7 +57,7 @@
             "title": "Markdown記法 チートシート #Qiita - Qiita",
             "description": "Markdown記法のチートシートです。記法はGitHub Flavored Markdownに準拠し、一部拡張しています。Qiitaでシンタックスハイライト可能な言語一覧については、 シンタッ…",
             "keywords": "Qiita,Markdown",
-            "image": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY4OCUyRmNjZjkwYjU1N2E0MDYxNTdkYmI5ZDJkN2U1NDNkYWUzODRkYmI1NjElMkZsYXJnZS5wbmclM0YxNTc1NDQzNDM5P2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZmbT1wbmczMiZzPWIwNjY3Y2FjNzFlNzRiZWYxMDdmNjNlODcyYTQ5MTll%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D2ff846b219b03ff11542a0619ae446fb?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9TWFya2Rvd24lRTglQTglOTglRTYlQjMlOTUlMjAlRTMlODMlODElRTMlODMlQkMlRTMlODMlODglRTMlODIlQjclRTMlODMlQkMlRTMlODMlODgmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz1iN2IxOGYwYzZjYmFkOTExOWIyZTY2NDkxZWM4NTEyOQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBRaWl0YSZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTA2MWVmNzYzOTE3OGQyNWU5MWI4M2ZkY2ViYTcxYWE1&blend-x=242&blend-y=454&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&txt64=aW4gUWlpdGHmoKrlvI_kvJrnpL4&txt-x=242&txt-y=539&txt-width=838&txt-clip=end%2Cellipsis&txt-color=%231E2121&txt-font=Hiragino%20Sans%20W6&txt-size=28&s=e7e05dd0f49c0b2180ca894418cea9bb",
+            "image": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY4OCUyRmNjZjkwYjU1N2E0MDYxNTdkYmI5ZDJkN2U1NDNkYWUzODRkYmI1NjElMkZsYXJnZS5wbmclM0YxNTc1NDQzNDM5P2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZmbT1wbmczMiZzPWIwNjY3Y2FjNzFlNzRiZWYxMDdmNjNlODcyYTQ5MTll%26blend-x%3D120%26blend-y%3D462%26blend-w%3D90%26blend-h%3D90%26blend-mode%3Dnormal%26mark64%3DaHR0cHM6Ly9xaWl0YS1vcmdhbml6YXRpb24taW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1vcmdhbml6YXRpb24taW1hZ2UlMkY4YTMwMDIzOGRmNzg0YzlmYzRlMDY4M2JjMjE0MWIzYzhjNWI3YjU4JTJGb3JpZ2luYWwuanBnJTNGMTYzODI4NjQ3Mz9peGxpYj1yYi00LjAuMCZ3PTQ0Jmg9NDQmZml0PWNyb3AmbWFzaz1jb3JuZXJzJmNvcm5lci1yYWRpdXM9OCZib3JkZXI9MiUyQ0ZGRkZGRiZmbT1wbmczMiZzPWEyMDY4NDQ1YTUxOGRmZmQzM2U4MzQ1ZTFkYzkwMzc1%26mark-x%3D186%26mark-y%3D515%26mark-w%3D40%26mark-h%3D40%26s%3D7dc6f80fe2247417a61ea22f1f024685?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9TWFya2Rvd24lRTglQTglOTglRTYlQjMlOTUlMjAlRTMlODMlODElRTMlODMlQkMlRTMlODMlODglRTMlODIlQjclRTMlODMlQkMlRTMlODMlODgmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz1iN2IxOGYwYzZjYmFkOTExOWIyZTY2NDkxZWM4NTEyOQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBRaWl0YSZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTA2MWVmNzYzOTE3OGQyNWU5MWI4M2ZkY2ViYTcxYWE1&blend-x=242&blend-y=454&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&txt64=UWlpdGHmoKrlvI_kvJrnpL4&txt-x=242&txt-y=539&txt-width=838&txt-clip=end%2Cellipsis&txt-color=%231E2121&txt-font=Hiragino%20Sans%20W6&txt-size=28&s=71f680e8fb8455fe973e6b843bfdfef3",
             "favicon": "https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico"
         },
         "https://qiita.com/ryo-ww/items/7c2b8a7519bd9a06dfd9": {
@@ -75,11 +75,11 @@
             "favicon": "https://www.webfx.com/wp-content/uploads/2021/10/favicon.png"
         },
         "https://ryoww.github.io/ShitaLab/": {
-            "title": "ShitaLab",
-            "description": "",
-            "keywords": "",
-            "image": "https://ryoww.github.io/ShitaLab/wifi.svg",
-            "favicon": "https://ryoww.github.io/ShitaLab/wifi.svg"
+            "title": "Error",
+            "description": "Error",
+            "keywords": "Error",
+            "image": "Error",
+            "favicon": "Error"
         }
     },
     "WSL/Windows側初期設定": {
